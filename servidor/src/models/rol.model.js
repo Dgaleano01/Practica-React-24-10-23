@@ -7,4 +7,4 @@ const rolShema = new mongoose.Schema({
     }
 })
 
-export default mongoose.Schema('Rol', rolShema);
+export default mongoose.model('Rol', rolShema);

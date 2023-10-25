@@ -7,4 +7,4 @@ const areaShema = new mongoose.Schema({
     }
 })
 
-export default mongoose.Schema('Area', areaShema);
+export default mongoose.model('Area', areaShema);

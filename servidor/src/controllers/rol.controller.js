@@ -1,17 +1,17 @@
-import Rol from "../models/rol.model";
+import Rol from "../models/rol.model.js";
 
 export const getRols = async (req, res) => {
- const rols = await Rol.find().populates('name')
+ const rols = await Rol.find();
  res.json(rols)
-}
+} 
 
 export const getRol = async (req, res) => {
-    const rol = await Rol.findById(req.params.id).populates('name')
+    const rol = await Rol.findById(req.params.id);
     if (!rol) return res.status(404).json({message: 'Rol not found'});
-    res.json({message: 'Rol ceated'});
+    res.json(rol);
 }
 
-export const creatRol = async (req, res) => {
+export const createRol = async (req, res) => {
     const { name } = req.body;
     const newRol = Rol({
         name
